@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Supermercado</title>
+    <link rel="stylesheet" href="caixa.css">
+</head>
+<body>
+
+    <div class="caixa">
+        <h1>Caixa de Supermercado</h1>
+
+        <div class="entrada">
+            <input type="number" id="codigo" placeholder="Código do produto">
+            <input type="number" id="quantidade" placeholder="Qtd" min="1" value="1">
+            <button id="adicionar">Adicionar</button>
+        </div>
+
+        <h2>Carrinho</h2>
+
+        <ul id="carrinho"></ul>
+
+        <div class="resumo">
+            <p>Subtotal: R$ <span id="subtotal">0.00</span></p>
+            <p>Total: R$ <span id="total">0.00</span></p>
+        </div>
+
+        <div class="pagamento">
+            <input type="number" id="valor-pago" placeholder="Valor pago">
+            <button id="finalizar">Finalizar Venda</button>
+        </div>
+
+        <p id="troco"></p>
+    </div>
+
+</body>
+<script src="caixa.js"></script>
+</html>

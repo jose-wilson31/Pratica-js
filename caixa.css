@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f3f5;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.caixa {
+    width: 700px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.entrada,
+.pagamento {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #53db9c;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #146c43;
+}
+
+#carrinho {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#carrinho li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-left: 4px solid #198754;
+}
+
+.resumo {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.resumo p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+#troco {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #198754;
+}
