@@ -69,7 +69,7 @@ const produtos = [
         nome: "Whisky 750ml",
         preco: 80.00
     }
-    
+
 ];
 
 let carrinho = [];
@@ -83,6 +83,8 @@ const valorPagoInput = document.getElementById("valor-pago");
 const finalizarBtn = document.getElementById("finalizar");
 const trocoSpan = document.getElementById("troco");
 const quantidadeInput = document.getElementById("quantidade");
+const formasPagamento = document.getElementById("formas-pagamento");
+const pagamentoInfo = document.getElementById("pagamento-info");
 
 adicionarBtn.addEventListener("click", adicionarProduto);
 finalizarBtn.addEventListener("click", finalizarCompra);
@@ -134,11 +136,28 @@ function calcularTotal() {
 function finalizarCompra() {
     const total = calcularTotal();
     const valorPago = parseFloat(valorPagoInput.value);
+    const formaPagamento = formasPagamento.value;
+
+    if (formaPagamento === "selecione") {
+        alert("Por favor, selecione uma forma de pagamento!");
+        return;
+    }
 
     if (carrinho.length === 0) {
         alert("O carrinho está vazio!");
         return;
     }
+
+    if (formaPagamento === "dinheiro") {
+        pagamentoInfo.textContent = "Forma de pagamento: Dinheiro";
+    } else if (formaPagamento === "pix") {
+        pagamentoInfo.textContent = "Forma de pagamento: PIX";
+    } else if (formaPagamento === "debito") {
+        pagamentoInfo.textContent = "Forma de pagamento: Cartão (Débito)";
+    } else if (formaPagamento === "credito") {
+            pagamentoInfo.textContent = `Forma de pagamento: Cartão (Crédito) ${forma.toUpperCase()}`;
+    }
+
 
     if (isNaN(valorPago) || valorPago < total) {
         alert("Valor pago é insuficiente!");
@@ -146,11 +165,12 @@ function finalizarCompra() {
     }
 
     const troco = valorPago - total;
-    trocoSpan.textContent = troco.toFixed(2);
+    trocoSpan.textContent = 'Troco: R$' + troco.toFixed(2);
 
     carrinho = [];
     atualizarCarrinho();
     valorPagoInput.value = "";
+    formaPagamento.value = "selecione";
     alert("Compra finalizada com sucesso!");
 }
 

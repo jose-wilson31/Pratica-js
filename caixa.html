@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caixa de Supermercado</title>
     <link rel="stylesheet" href="caixa.css">
 </head>
+
 <body>
 
     <div class="caixa">
@@ -27,13 +29,24 @@
         </div>
 
         <div class="pagamento">
-            <input type="number" id="valor-pago" placeholder="Valor pago">
+
+            <select id="formas-pagamento">
+                <option value="selecione">Selecione a forma de pagamento</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="debito">Cartão (Débito)</option>
+                <option value="credito">Cartão (Crédito)</option>
+            </select>
+
+            <input type="number" id="valor-pago" placeholder="Valor pago" step="0.01">
             <button id="finalizar">Finalizar Venda</button>
         </div>
 
         <p id="troco"></p>
+        <p id="pagamento-info"></p>
     </div>
 
 </body>
 <script src="caixa.js"></script>
+
 </html>

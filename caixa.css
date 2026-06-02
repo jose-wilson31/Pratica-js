@@ -10,11 +10,14 @@ body {
     display: flex;
     justify-content: center;
     padding: 30px;
+    background-image: url("https://images.unsplash.com/photo-1542838132-92c53300491e");
+    background-size: cover;
 }
 
 .caixa {
     width: 700px;
     background: white;
+    margin-top: 10px;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
